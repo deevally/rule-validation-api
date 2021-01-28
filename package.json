@@ -1,0 +1,62 @@
+{
+  "name": "rule-validation-api",
+  "version": "1.0.0",
+  "description": "Server for rule validation api",
+  "main": "index.js",
+  "scripts": {
+    "clean": "rm -rf build && mkdir build",
+    "build-babel": "babel -d ./build ./src -s",
+    "build": "npm run clean && npm run build-babel",
+    "start": "node ./build/index.js",
+    "dev": "nodemon --watch src --delay 250ms --exec babel-node src/index.js"
+  },
+  "engines": {
+    "node": "12.9.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:geraldanosike/rule-validation-api.git"
+  },
+  "keywords": [
+    "rule"
+  ],
+  "author": "Gerald Anosike",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com:geraldanosike/rule-validation-api/issues"
+  },
+  "homepage": "https://github.com:geraldanosike/rule-validation-api/issues#readme",
+  "dependencies": {
+    "babel-preset-env": "^1.7.0",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-rate-limit": "^5.1.3",
+    "helmet": "^3.23.3",
+    "hpp": "^0.2.3",
+    "mongoose": "^5.11.13",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.7",
+    "pg": "^8.3.0",
+    "pg-hstore": "^2.3.3",
+    "sequelize": "^6.5.0",
+    "uuid": "^8.2.0",
+    "validator": "^13.5.2",
+    "winston": "^3.3.3",
+    "xss-clean": "^0.1.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.10.5",
+    "@babel/core": "^7.10.5",
+    "@babel/node": "^7.10.5",
+    "@babel/plugin-transform-async-to-generator": "^7.10.4",
+    "@babel/plugin-transform-runtime": "^7.10.5",
+    "@babel/preset-env": "^7.10.4",
+    "@babel/runtime": "^7.10.5",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-plugin-add-module-exports": "^1.0.2",
+    "babel-plugin-transform-async-to-generator": "^6.24.1",
+    "sequelize-cli": "^6.2.0"
+  }
+}
