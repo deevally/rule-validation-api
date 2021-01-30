@@ -6,6 +6,14 @@ import asyncHandler from "../Middlewares/async"
 exports.Payload = asyncHandler(async(req, res)=>{
 try {
 
+  //check if dat field is anobject
+  if(typeof(req.body.data) !== 'object'){
+    return res.status(400).json({
+      message: "data should be an object.",
+      status: "error",
+      data: null
+  })
+  }
   //data field exist
 if(!req.body.data) {
   return res.status(400).json({
@@ -15,14 +23,16 @@ if(!req.body.data) {
 })
 }
 
-if(typeof(req.body.data) !== 'object'){
+
+
+//Check if rule is an Object
+if(typeof(req.body.rule) !== 'object'){
   return res.status(400).json({
-    message: "data should be an object.",
+    message: "rule should be an object.",
     status: "error",
     data: null
 })
 }
-
  //body field exist
  if(!req.body.rule) {
   return res.status(400).json({
@@ -32,14 +42,7 @@ if(typeof(req.body.data) !== 'object'){
   
 })
 }
-//Check if rule is an Object
-if(typeof(req.body.rule) !== 'object'){
-  return res.status(400).json({
-    message: "rule should be an object.",
-    status: "error",
-    data: null
-})
-}
+
 
 
 
