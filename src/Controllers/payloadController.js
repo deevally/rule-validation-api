@@ -6,7 +6,7 @@ import asyncHandler from "../Middlewares/async"
 exports.Payload = asyncHandler(async(req, res)=>{
 try {
 
-  //check if dat field is anobject
+  //check if data field is an object
   if(typeof(req.body.data) !== 'object'){
     return res.status(400).json({
       message: "data should be an object.",
