@@ -1,7 +1,8 @@
 import { Router } from "express";
 // import usersRouter from "../Controllers/usersController";
-const {User} = require("../Controllers/usersController")
+const {Payload} = require("../Controllers/payloadController")
 const router = Router();
+
 router.get("/", (req, res) => {
   res.status(200).json({
     message: "My Rule-Validation API",
@@ -15,5 +16,5 @@ router.get("/", (req, res) => {
   });
 });
 
-router.post("/validate-rule", User);
+router.post("/validate-rule", Payload);
 export default router;
